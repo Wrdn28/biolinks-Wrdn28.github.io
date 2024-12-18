@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(34, 34, 34);
+    color: #d3d3d3;
+    font-family: 'Outfit', sans-serif;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #141414;
+    height: 430px;
+    width: 370px;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    z-index: 2;
+}
+
+.profile h1 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile p {
+    color: #b0bec5;
+    font-size: 1rem;
+}
+
+.profile-picture {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 3;
+
+    border: 5px solid transparent;
+    background: linear-gradient(120deg, #6a0dad, #4b0082, #00bfff, #6a0dad);
+    background-size: 200% 200%;
+    animation: lightsaber 3s linear infinite;
+
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.6),
+        0 0 20px rgba(75, 0, 130, 0.4),
+        0 0 30px rgba(0, 191, 255, 0.3);
+}
+
+@keyframes lightsaber {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.profile .background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    filter: grayscale(100%) blur(10px);
+    transition: all 2s ease;
+    z-index: 0;
+}
+
+.profile:hover .background {
+    transform: scale(1.3);
+}
+
+.icon {
+    font-size: 2rem;
+    position: relative;
+    z-index: 3;
+    padding-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 4;
+}
+
+.icon a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #b0bec5;
+    position: relative;
+    z-index: 4;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.icon a:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: #00e5ff;
+    text-shadow: 0 0 8px #00e5ff, 0 0 16px #00e5ff;
+}
